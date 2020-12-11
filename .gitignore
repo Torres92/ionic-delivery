@@ -1,0 +1,33 @@
+# =========================
+# Core
+# =========================
+
+# Node
+node_modules
+
+# Angular
+dist
+
+# Misc
+*.log
+
+# =========================
+# IDE
+# =========================
+
+# VS Code
+
+.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+.DS_Store
