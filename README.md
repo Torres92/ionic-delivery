@@ -1,16 +1,11 @@
 # This Project based on Habib Dev. UI Challenges Project - Self made.
-# Car Rental Mobile App UI User Interface Modern Design Project with ionic 5 and Angular Framework V9.
+# Car Rental Mobile App UI User Interface Modern Design Project with ionic 6 and Angular Framework V9.
 
 ## Developed Using:
 <p align="left">
-<a href="https://ionicframework.com/">Ionic Framework V5</a>
+<a href="https://ionicframework.com/">Ionic Framework V6</a>
 </p>
 
-## Screenshots
-![car-rental-ui](https://user-images.githubusercontent.com/31030616/87987995-9b9de700-caf0-11ea-9c94-f15c7d57eb38.png)
-
-## Youtube Demo
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NTQ3SQfM9nI/0.jpg)](https://www.youtube.com/watch?v=NTQ3SQfM9nI)
 
 ## Prerequisite:
 1. Node.js to be installed.
@@ -37,5 +32,5 @@ ionic serve
 
 **Note that I am not responsible for any misuse of any of my examples.**
 
-> Habib AlMawali :smirk_cat:
+> Credits to: Habib AlMawali :smirk_cat:
 # ionic-delivery
