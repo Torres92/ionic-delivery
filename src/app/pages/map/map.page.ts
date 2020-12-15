@@ -9,6 +9,7 @@ export class MapPage implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
   }
 
