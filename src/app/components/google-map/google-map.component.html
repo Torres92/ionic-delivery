@@ -1,1 +1,28 @@
+<!-- <ion-item color="primary">
+    <ion-row class="ion-align-items-center">
+        <ion-col size="10">
+            <ion-searchbar placeholder="Oman, Muscat" searchIcon="location-outline"></ion-searchbar>
+        </ion-col>
+        <ion-col size="2">
+            <ion-button color="light" fill="clear">
+                <ion-icon slot="icon-only" name="options-outline"></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-item> -->
 <div #map id="map"></div>
+<ion-slides (ionSlideDidChange)="onSlideDidChange()">
+    <ion-slide *ngFor="let marker of markers">
+        <ion-card>
+            <ion-item>
+                <ion-thumbnail slot="start">
+                    <img [src]="marker.image">
+                </ion-thumbnail>
+                <ion-label class="ion-text-wrap">
+                    <h2>{{ marker.title }}</h2>
+                    <p>{{ marker.text }}</p>
+                </ion-label>
+            </ion-item>
+        </ion-card>
+    </ion-slide>
+</ion-slides>

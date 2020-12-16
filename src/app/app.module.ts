@@ -11,16 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 import { AppComponent } from './app.component';
-import { GoogleMapComponent } from './components/google-map/google-map.component'
 @NgModule({
-  declarations: [AppComponent, GoogleMapComponent],
+  declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, GoogleMapComponent, IonicModule.forRoot({mode: 'md'}), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot({mode: 'md'}), AppRoutingModule], 
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
