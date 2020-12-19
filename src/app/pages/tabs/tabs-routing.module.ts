@@ -9,7 +9,7 @@ const routes: Routes = [
     path: 'home',
     component: TabsPage,
     children: [
-      
+
       {
         path: 'map',
         loadChildren: () => import('../map/map.module').then(m => m.MapPageModule)
@@ -20,29 +20,15 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
-          },
-          {
-            path: 'details',
-            loadChildren: () => import('../details/details.module').then(m => m.DetailsPageModule)
           }
+          // },
+          // {
+          //   path: 'details',
+          //   loadChildren: () => import('../details/details.module').then(m => m.DetailsPageModule)
+          // }
         ]
 
       }
-      // {
-      //   path: 'list',
-      //   children: [
-      //     {
-      //       path: '',
-      //       loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
-
-      //     },
-      //     {
-      //       path: 'details',
-      //       loadChildren: () => import('../details/details.module').then(m => m.DetailsPageModule)
-
-      //     }
-      //   ]
-      // }
       ,
       {
         path: '',
@@ -58,40 +44,6 @@ const routes: Routes = [
   }
 ];
 
-
-// const routes: Routes = [
-//   {
-//     path: '',
-//     component: TabsPage,
-//     children: [
-//       {
-//         path: 'home',
-//         children: [
-//           {
-//             path: '',
-//             loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
-
-//           },
-//           {
-//             path: 'details',
-//             loadChildren: () => import('../details/details.module').then(m => m.DetailsPageModule)
-
-//           }
-//         ]
-//       },
-//       {
-//         path: '**',
-//         redirectTo: '/home',
-        
-//       }
-//     ]
-//   },
-//   {
-//     path: '',
-//     redirectTo: '/home',
-//     pathMatch: 'full'
-//   }
-// ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
