@@ -1,5 +1,7 @@
 {
   "name": "ui-3",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
