@@ -1,64 +1,89 @@
-ion-item {
-//  --background: #dbdada;
-   // --background: #316dd0;
-    h2 {
-      font-weight: bold;
-      font-size: 20px;
-      color: #ffffff;
-    }
-  }
-  
-  // ion-item:last-of-type {
-  //   div {
-  //     padding-bottom: 20px;
-  //   }
-  //   border-radius: 0 0 20% 20%;
-  // }
-  
+
   ion-header  {
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.10);
-    .searchbar-input {
-      border-radius: 50px;
+    // .searchbar-input {
+    //   border-radius: 50px;
+    // }
+
+    ion-segment {
+      margin: 0 10px;
+      --background: #ffffff;
     }
+    
+    ion-segment-button {
+      text-transform: capitalize;
+      transform: scale(.8,.8);
+      --indicator-color:transparent;
+      color: #969696;
+    
+      ion-label {
+        position: relative;
+        left: -17px;
+        font-weight: bolder;
+      }
+    }
+    
   }
 
-  // ion-header  {
-  //   position: fixed;
-  //   background: transparent;
-  // }
-  ion-searchbar {
-    --box-shadow: none;
- //   --box-shadow: 0px 3px 45px 0px rgba(0, 0, 0, 0.16);
 
-   --background: #f6f6f6 !important;
-   // border: 0.5px #000000 solid ;
-    opacity: .96;
-    padding: 0;
-    margin: 12px 0;
-  }
+
+.segment-button-checked {
+  color: #333;
+}
+
+.segment-button-checked:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  border-bottom: 4px solid #333;
+}
 
   
-  
+
+
   ion-col {
     padding: 0;
   }
-  
-  // ::ng-deep .searchbar-search-icon {
-  //   color: #316dd0 !important;
-  // }
+
   
   ion-content {
     --background: #f6f6f6;
   }
   
-  ion-card {
-    padding: 6px;
-    box-shadow: none;
-    box-shadow: 0px 3px 45px 0px rgba(0, 0, 0, 0.16);
-    border-radius: 30px;
-  
-    ion-img {
-      width: 200px;
-      margin: 0 auto;
+  ion-slides {
+    font-size: 12px;
+    ion-row {
+      max-width: 100px;
+
+      ion-col.badge {
+        margin: 4px 0px 0px;
+      }
+    ion-thumbnail {
+      min-height: 100px;
+      width: 100px;
+       box-shadow: none;
+       border: 1px solid #8c8c8c;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+      display: flex;
+      padding: 2px;
+      img {
+        margin: auto;
+      }
+    }
+
+    ion-item {
+      max-width: 100%;
+     
     }
   }
+
+  }
+
+
+
+
+  

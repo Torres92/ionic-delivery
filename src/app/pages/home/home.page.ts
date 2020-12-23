@@ -6,7 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
+  options = {
+    //centeredSlides: true,
+    loop: true,
+    spaceBetween: 2,
+    slidesPerView: 3.2,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    }
+  };
   constructor() { }
 
   ngOnInit() {

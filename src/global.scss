@@ -30,15 +30,20 @@ ion-list {
     background-color: #222428 !important;
 }
 
+ion-tab-bar {
+  box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.10);
+}
+
 ion-tab-bar ion-tab-button {
-    color: white !important;
+    color: #4d71d7 !important;
 }
 .primary-color {
     --background: #316dd0  !important;
 }
 
 .tab-selected {
-    background-color:#265aad !important ;
+   // background-color:#265aad !important ;
+    border-top: 1px solid #265aad !important ;
 }
 
 // Fuente: https://daneden.github.io/animate.css/
