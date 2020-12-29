@@ -17,8 +17,11 @@
 </ion-header> -->
 
 <ion-content [fullscreen]="true" >
-
- <google-map></google-map>
+  <div id="mapid"></div>
+  <ion-button style="position: absolute; right: 5px; top: 20px; z-index: 2;" color="dark" (click)="getPositions()">
+    Show Marker
+  </ion-button>
+ <!-- <google-map></google-map> -->
   <!-- <div class="ion-padding" >
 
     <ion-card class="ion-margin-bottom" class="animated fadeInDown"  >

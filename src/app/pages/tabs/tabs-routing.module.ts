@@ -15,11 +15,27 @@ const routes: Routes = [
         loadChildren: () => import('../map/map.module').then(m => m.MapPageModule)
       },
       {
-        path: 'list',
+        path: 'shop',
         children: [
           {
             path: '',
             loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
+          }
+          // },
+          // {
+          //   path: 'details',
+          //   loadChildren: () => import('../details/details.module').then(m => m.DetailsPageModule)
+          // }
+        ]
+
+      }
+      ,
+      {
+        path: 'schedule',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../schedule/schedule.module').then(m => m.SchedulePageModule)
           }
           // },
           // {
