@@ -81,7 +81,7 @@ export class MapPage implements OnInit {
     if (this.latLong.length > 0) return
     const loading = await this.loadingCtrl.create();
     await loading.present();
-    
+
     var lat = await Geolocation.getCurrentPosition({
       enableHighAccuracy: true
     })
@@ -90,7 +90,7 @@ export class MapPage implements OnInit {
       lat.coords.longitude
     ]
 
-    this.map = new Map('mapid').setView(this.latLong, 10);
+    this.map = new Map('mapid').setView(this.latLong, 20);
     const attribution =
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
@@ -113,31 +113,49 @@ export class MapPage implements OnInit {
 
   showMarker(latLong) {
     //console.log('hey show markerrrr', latLong)
-    this.marker = marker(latLong, 15);
+    this.marker = marker(latLong, 20);
     this.marker.addTo(this.map)
       .bindPopup('Mi ubicación actual').openPopup();
-    this.map.setView(latLong);
+    this.map.setView(latLong, 20);
     // new this.map.routing
   }
 
-  getPositions() {
-    Geolocation.getCurrentPosition({
-      enableHighAccuracy: true
-    }).then((res) => {
-      console.log('hey resss', res)
-      return this.latLong = [
+  async getPositions() {
+    try {
+      let res = await Geolocation.getCurrentPosition({
+        enableHighAccuracy: true
+      })
+
+      this.latLong = [
         res.coords.latitude,
         res.coords.longitude
       ]
-    })
-      .then((latlng) => {
-        if (this.marker) {
-          this.marker.remove();
-          this.showMarker(latlng);
-        } else {
-          this.showMarker(latlng);
-        };
-      });
+
+      if (this.marker) {
+        this.marker.remove();
+        this.showMarker(this.latLong);
+      } else {
+        this.showMarker(this.latLong);
+      };
+    } catch(e){
+      console.log(e)
+    }
+
+    // .then((res) => {
+    //   console.log('hey resss', res)
+    //   return this.latLong = [
+    //     res.coords.latitude,
+    //     res.coords.longitude
+    //   ]
+    // })
+    //   .then((latlng) => {
+    //     if (this.marker) {
+    //       this.marker.remove();
+    //       this.showMarker(latlng);
+    //     } else {
+    //       this.showMarker(latlng);
+    //     };
+    //   });
   }
 
 
