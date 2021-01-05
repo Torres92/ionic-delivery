@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular'
 
 import { Plugins } from '@capacitor/core'
-import { Map, tileLayer, marker } from 'leaflet'
+import * as L from 'leaflet'
+// import { Map, tileLayer, marker, routing } from 'leaflet'
 import { Observable } from 'rxjs';
-import { title } from 'process';
-
 
 const { Geolocation } = Plugins;
 @Component({
@@ -15,8 +14,8 @@ const { Geolocation } = Plugins;
 })
 export class MapPage implements OnInit {
 
-  map: Map;
-  marker: any;
+  map: L.Map;
+  marker: L.marker;
   latLong = [];
 
   constructor(
@@ -90,13 +89,19 @@ export class MapPage implements OnInit {
       lat.coords.longitude
     ]
 
-    this.map = new Map('mapid').setView(this.latLong, 20);
+    this.map = new L.Map('mapid').setView(this.latLong, 20);
     const attribution =
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
     const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    const tiles = tileLayer(tileUrl, { attribution });
+    const tiles = L.tileLayer(tileUrl, { attribution });
     tiles.addTo(this.map)
+    // R.routing.control({
+    //   waypoints: [
+    //     this.map.latLng(57.74, 11.94),
+    //     this.map.latLng(57.6792, 11.949)
+    //   ]
+    // }).addTo(this.map);
     this.showMarker(this.latLong)
     this.loadingCtrl.dismiss();
     // tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidG9ycmVzOTIiLCJhIjoiY2tqOTBpbXQyMTN1MTJ2cWkzMjN2bWprYSJ9.w_4ycq-hG59z64nHo5CvZQ', {
@@ -113,7 +118,7 @@ export class MapPage implements OnInit {
 
   showMarker(latLong) {
     //console.log('hey show markerrrr', latLong)
-    this.marker = marker(latLong, 20);
+    this.marker = L.marker(latLong, 20);
     this.marker.addTo(this.map)
       .bindPopup('Mi ubicación actual').openPopup();
     this.map.setView(latLong, 20);
